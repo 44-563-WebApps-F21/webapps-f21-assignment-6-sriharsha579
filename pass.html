@@ -5,41 +5,83 @@
 
 <h2>Pass phrase by Shanmukha Sriharsha Kalluri </h2>
 
-<form>
-    <label for="form1_phrase">Enter the secret phrase </label>
-    <input type ="Password" id="form1_phrase" name="form1_phrase" min=10 max=50 step=2 value= "Let me in"> <br>
+<form id="phraseValidationForm">
+    
+    <div>
+        <label for="secret_phrase">Enter the secret phrase</label>
+        <input type ="password" id="secretPhrase" value="Let me in">
+    </div>
+    
+    <div>
+        <label for="phrase">Enter a phrase</label>
+        <input type ="text" id="checkPhrase"/>
+    </div>
+    
+    <div>
+        <input type="button" id="btnProcessPhrase" onclick="processPhrase()" value="Check the phrase"/>
+    </div>
 
-    <label for="form1_check">Enter a phrase </label>
-    <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
-
-    <input type="button" onclick="processPhrase()" value="Check the phrase">
 </form>
 
+<p id="result"></p>
 
-<p id="result">Result: </p>
+<div>
+    <label for="image">IMAGE: </label>
+    <img src="Kangaroo.jpg" id="image" style="height: 200px;width: 200px;" onclick="newImage()"></img><br><br>
+
+</div>
 
 <script> 
+    correct = 0;
+    wrong = 0;
+    usingImage = 1;
+   
+   function processPhrase (){
+       console.log("Getting form values")
+       var secretPhrase = document.getElementById("secretPhrase").value;
+       var checkPhrase = document.getElementById("checkPhrase").value;
+       if(secretPhrase != null && secretPhrase.trim() != "" && checkPhrase != null && checkPhrase.trim() != "" && secretPhrase == checkPhrase){
+         correct =correct + 1;
+         alert("Access Allowed");
+       }else{
+           wrong = wrong + 1;
+           alert("Access Denied"); 
+           
+        
+            
+       }
+        var out = document.getElementById("result");
+       
+        out.innerHTML = "Correct: " + correct + "<br>" + "Wrong: " + wrong;
+       
+   }
 
-function processPhrase(){
-    var correct=0;
-    var wrong =0; 
-    
-    phrase = document.getElementById("form1_phrase").value
-    check = document.getElementById("form1_check").value
-    alert("Is the given value"+check)
-    out = document.getElementById("result")
 
-    if(phrase==check){
-        correct = correct+1;
-       out.innerHTML = "correct:" +correct ;
-       alert('Access allowed')
-    } else {
-        wrong = wrong +1;
-        out.innerHTML = "wrong:" +wrong ;
-        alert('Access denied')
-    }
-}
-</script>
+   function newImage(){
+
+        switch(usingImage){
+
+            case 1: 
+                usingImage++;
+                document.getElementById("image").src = "Kangaroo.jpg";
+                break;
+            
+            case 2:
+                usingImage++;
+                document.getElementById("image").src = "Leopard.jpg";
+                break;
+            
+            case 3:
+                usingImage =1;
+                document.getElementById("image").src = "lion.jpg";
+                break;
+        }
+
+
+   }
+
+   </script>
+   
 
 </body>
 </html> 
