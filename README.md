@@ -3,6 +3,6 @@ Assignment introduction Java Script and DOM
 <br>
 [Hosted At Pass](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-sriharsha579/pass.html)
 <br>
-[Hosted At Arthematic](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-sriharsha579/Arthematic.html)
+[Hosted At Arthematic](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-sriharsha579/Arithmatic.html)
 <br>
 [Hosted At Cars](https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-sriharsha579/Cars.html)
